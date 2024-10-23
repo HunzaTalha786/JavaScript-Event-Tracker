@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Event Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onscroll="updateScrollPosition()">
+    <h1>JavaScript Events Tracker</h1>
+
+    <!-- Click Event -->
+    <div class="container">
+        <h2>Click Event</h2>
+        <div id="clickCount" class="count">0</div>
+        <button id="clickButton" onclick="handleClick()">Click Me!</button>
+        <button onclick="restart()">Restart</button>
+    </div>
+<!-- Mouse Event -->
+ <div class="mouse-container">
+    <h2>Mouse Event</h2>
+    <div id="mouseArea">
+        Hover over me!
+       
+    </div>
+    <div id="message"></div>
+</div>
+
+<!-- KeyBoard Event -->
+<div class="keyboard-container">
+    <h2>KeyBoard Event</h2>
+<input type="text" id="inputField-keyboard" onkeydown="displayKey(event)"  placeholder="Press any key!">
+<div id="keyboard-message"></div>
+<button onclick="reset()">Restart</button>
+</div>
+
+<!-- Focus and Blur Event -->
+ <div class="focus-container">
+    <h2>Focus and Blur Event</h2>
+<input type="text" id="Focus-input" onfocus="updateFocusStatus('Focused')" onblur="updateFocusStatus('not Focused')" placeholder="Focus and blur">
+<div id="message-focus">Input is not focused</div>
+</div>
+
+<!-- Window resize Evenet -->
+ <div class="container">
+    <h2>Window Resize Event</h2>
+
+<div id="resize-message">Window size: Width: ${window.innerWidth}, Height: ${window.innerHeight}</div>
+</div>
+
+<!-- Touch event -->
+ <div class="container">
+    <h2>Touch Event</h2>
+<div id="touch-message">Touch position: None</div>
+</div>
+
+<!-- Submit event -->
+<div class="container">
+    <h2>Form Submit Event</h2>
+    <form id="myForm" onsubmit="handleSubmit(event)">
+        <input  type="text" id="form-inputField" placeholder="Enter something..." required><br>
+        <button  type="submit">Submit</button>
+        <button  type="button" onclick="resetForm()">Reset</button>
+    </form>
+    <div id="submitStatus">Submission Status: Not Submitted</div>
+</div>
+
+<!-- Drag and drop event -->
+
+<div class="container">
+    <h2>Drag and Drop Event</h2>
+    <div id="draggable" draggable="true" ondragstart="handleDragStart()" ondragend="handleDragEnd()">
+        Drag Me!
+    </div>
+    <div id="dragStatus">Drag Status: Not Dragging</div>
+</div>
+
+<!-- Media event -->
+<div class="container">
+    <h2>Media Event</h2>
+    <video id="myVideo" width="400" controls>
+        <source src="./video/2616637-hd_1920_1080_30fps.mp4" type="video/mp4"> 
+        
+    </video>
+    <div id="mediaStatus">Media Status: Stopped</div>
+</div>
+
+<!-- Mousehover and MouseOut event. -->
+ <div class="container">
+    <h2> MouseOver and MouseOut Event</h2>
+    <img id="Mouse-event-img" src="./images/rose.jpg" onmouseover="src='./images/jasmin.jpg'" onmouseout="src='./images/rose.jpg'" alt="">
+</div>
+    <!-- Ondouble click event -->
+    <div class="container">
+        <h2>DoubleClick Event</h2>
+       <button id="doboubleclick-btn" ondblclick="alert('Hello! How are you?');">Click Me</button>
+    </div>
+    <!-- scroll event -->
+     <div class="container">
+        <h2>Scroll Event</h2>
+    <div id="scrollPosition">Scroll Position: 0</div>
+</div>
+
+<!-- Paste Event -->
+<div class="container">
+    <h2>Paste Event</h2>
+    <input type="text" id="input-paste" placeholder="Paste here.." onpaste="handlePaste(event)" /><br>
+    <button id="resetButton" onclick="resetFields()">Reset</button>
+    <div id="paste-result">Pasted text will appear here.</div>
+</div>
+
+
+</body>
+<script src="./script.js"></script>
+</html>
