@@ -31,10 +31,15 @@ function displayKey(event) {
     message.textContent = `Last key pressed: ${event.key}`;
 }
 
-function reset(){
-    document.getElementById('keyboard-message').textContent="";
+function displayTouch() {
+    const message = document.getElementById('keyboard-message');
+    message.textContent = 'Touch detected!';
+}
+
+function reset() {
+    document.getElementById('keyboard-message').textContent = "";
     const inputField = document.getElementById('inputField-keyboard');
-    inputField.value = ''; 
+    inputField.value = '';
 }
 
 // Focus and Blur Event

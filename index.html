@@ -29,9 +29,13 @@
 <!-- KeyBoard Event -->
 <div class="keyboard-container">
     <h2>KeyBoard Event</h2>
-<input type="text" id="inputField-keyboard" onkeydown="displayKey(event)"  placeholder="Press any key!">
-<div id="keyboard-message"></div>
-<button onclick="reset()">Restart</button>
+    <input type="text" 
+           id="inputField-keyboard" 
+           onkeydown="displayKey(event)" 
+           ontouchstart="displayTouch()" 
+           placeholder="Press any key!">
+    <div id="keyboard-message"></div>
+    <button onclick="reset()">Restart</button>
 </div>
 
 <!-- Focus and Blur Event -->
