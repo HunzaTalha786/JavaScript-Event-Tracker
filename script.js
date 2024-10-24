@@ -28,7 +28,11 @@ mouseArea.addEventListener('mouseleave', () => {
 
 function displayKey(event) {
     const message = document.getElementById('keyboard-message');
-    message.textContent = `Last key pressed: ${event.key}`;
+    if (event.type === 'input') {
+        message.textContent = `Last key pressed: ${event.target.value.slice(-1)}`;
+    } else if (event.type === 'keydown') {
+        message.textContent = `Last key pressed: ${event.key}`;
+    }
 }
 
 function displayTouch() {
